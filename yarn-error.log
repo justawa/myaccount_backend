@@ -1,0 +1,46 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --dev react react-dom
+
+PATH: 
+  C:\Users\nisant\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\nisant\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\nodejs;C:\xampp\php;C:\wamp64\bin\php\php7.2.10;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\Yarn\bin;C:\Users\nisant\AppData\Roaming\npm;C:\Users\nisant\AppData\Roaming\Composer\vendor\bin;C:\Users\nisant\AppData\Local\atom\bin;C:\Users\nisant\AppData\Local\Yarn\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  8.11.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, copyfile 'C:\Users\nisant\AppData\Local\Yarn\Cache\v4\npm-path-parse-1.0.6-d62dbb5679405d72c4737ec58600e9ddcf06d24c\node_modules\path-parse\.travis.yml' -> 'C:\xampp\htdocs\biller\node_modules\path-parse\.travis.yml'
+
+npm manifest: 
+  {
+    "private": true,
+    "scripts": {
+      "dev": "npm run development",
+      "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+      "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+      "watch-poll": "npm run watch -- --watch-poll",
+      "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+      "prod": "npm run production",
+      "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+      "axios": "^0.16.2",
+      "bootstrap-sass": "^3.3.7",
+      "cross-env": "^5.0.1",
+      "jquery": "^3.1.1",
+      "laravel-mix": "^1.0",
+      "lodash": "^4.17.4",
+      "vue": "^2.1.10"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
