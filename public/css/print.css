@@ -1,0 +1,43 @@
+@media print 
+{
+				a:after { content:''; }
+    			a[href]:after { content: none !important; }
+				a[href]:after {
+					content: none !important;
+					display: none !important;
+					visibility: hidden !important;
+				}
+
+				.hidePrint{
+					display: none !important;
+					visibility: hidden !important;
+				}
+				
+			    .borderless {
+			        border: none !important;
+			    }
+				
+				.borderless td, .borderless th {
+                    border: none !important;
+				}
+
+				table {
+					display: table;
+					border-spacing: 0;
+					border: 1px solid #ccc;
+				}
+				tr {
+					display: table-row;
+					border: 1px solid #ccc;
+				}
+				td {
+					display: table-cell;
+					border: 1px solid #ccc;
+					padding: 2px;
+				}
+
+				#print_section {
+					display: none !important;
+					visibility: hidden !important;
+				}
+			}

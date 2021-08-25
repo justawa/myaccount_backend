@@ -797,7 +797,7 @@
 				var close_modal1 = document.getElementsByClassName("closeCustomModal")[1];
 				var custom_message = document.getElementById('customMsg');
 				var customMessageTracked = '';
-
+				console.log(custom_message);
 				if(Array.isArray(message)){
 					customMessageTracked = "<ul style='color: red;'>";
 					for(let i=0; i<message.length; i++){
@@ -983,7 +983,7 @@
 
 			@php
 				$custom_message = session('failure');
-				echo "<script>show_custom_alert(`<span style=\"color: red\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i> $custom_message</span>`)</script>";
+				echo "<script>show_custom_alert(`<span style=\"color: red\"> $custom_message</span>`)</script>";
 			@endphp
 
 		@endif

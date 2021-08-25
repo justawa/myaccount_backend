@@ -176,7 +176,8 @@ class EwaybillController extends Controller
 
 
         $accesstoken_endpoint = Config::get('ewaybill.urls.ACCESSTOKEN.production');
-        $geneway_endpoint = Config::get('ewaybill.urls.EWAYBILL.production');
+        //print_r($accesstoken_endpoint); exit;
+        $geneway_endpoint = Config::get('ewaybill.urls.GENEWAYBILL.production');
         $this->gstin = auth()->user()->ewaybillDetail ? auth()->user()->ewaybillDetail->gst : null;
         $this->username = auth()->user()->ewaybillDetail ? auth()->user()->ewaybillDetail->username : null;
         $this->ewbpwd = auth()->user()->ewaybillDetail ? auth()->user()->ewaybillDetail->password : null;
@@ -194,9 +195,9 @@ class EwaybillController extends Controller
                 $qtyUnit = $invItem->item_measuring_unit;
             }
 
-            $invoiceItem["productName"] = $invItem->item->name;
-            $invoiceItem["productDesc"] = $invItem->item->name;
-            $invoiceItem["hsnCode"] = 1001 ?? $invItem->item->hsc_code;
+            $invoiceItem["productName"] = $invItem->name;
+            $invoiceItem["productDesc"] = $invItem->name;
+            $invoiceItem["hsnCode"] = 1001 ?? $invItem->hsc_code;
             $invoiceItem["quantity"] = $invItem->item_qty;
             $invoiceItem["qtyUnit"] = "Box" ?? $qtyUnit;
             $invoiceItem["cgstRate"] = $invItem->cgst ?? 0;
@@ -215,16 +216,18 @@ class EwaybillController extends Controller
         // (auth()->user()->profile->registered != 0 && auth()->user()->profile->gst != null) ? auth()->user()->profile->gst : 'URP';
         
         $fromStateCode = (auth()->user()->profile->communication_state > 9) ? auth()->user()->profile->communication_state : "0".auth()->user()->profile->communication_state;
-
+        // print_r($fromStateCode); exit;
         $toGstin = ($invoice->party->registered !=0 && $invoice->party->gst != null) ? $invoice->party->gst : 'URP';
+        // print_r($toGstin); exit;
         $toStateCode = ($invoice->party->shipping_state > 9) ? $invoice->party->shipping_state : "0".$invoice->party->shipping_state;
-
+        //print_r($toStateCode); exit;
         $transporterName = $request->transporter_name ?? '';
         $transporterDocNo = $request->transporter_doc_no ?? '';
         $transportMode = $request->transport_mode ?? '1';
         $transportDistance = $request->transport_distance ?? '68';
         $transportDocDate = $request->transport_doc_date ?? '';
         $vehicleNumber = $request->vehicle_number;
+        // print_r($vehicleNumber); exit;
         $vehicleType = (isset($request->vehicle_type) && !empty($request->vehicle_type)) ? strtoupper($request->vehicle_type) : 'R';
 
         try{
@@ -236,39 +239,39 @@ class EwaybillController extends Controller
         $dataArray = [
             "supplyType" => "O",
             "subSupplyType" => "1",
-            "subSupplyDesc" => " ",
+            "subSupplyDesc" => "",
             "docType" => "INV",
-            "docNo" => $docNo ?? "777-9",
-            "docDate" => \Carbon\Carbon::parse($invoice->invoice_date)->format('d/m/Y') ?? "15/12/2017",
-            "fromGstin" => $fromGstin ?? "05AAACG1625Q1ZK",
+            "docNo" => $docNo ?? "708241/5451164",
+            "docDate" => \Carbon\Carbon::parse($invoice->invoice_date)->format('d/m/Y') ?? "02/11/2020",
+            "fromGstin" => $fromGstin ?? "34AACCC1596Q002",
             "fromTrdName" => auth()->user()->profile->name ?? "welton",
             "fromAddr1" => auth()->user()->profile->communication_address ?? "2ND CROSS NO 59  19  A",
             "fromAddr2" => "" ?? "GROUND FLOOR OSBORNE ROAD",
             "fromPlace" => auth()->user()->profile->communication_city ?? "FRAZER TOWN",
-            "fromPincode" => auth()->user()->profile->communication_pincode ?? 263652,
-            "actFromStateCode" => $fromStateCode ?? "05",
-            "fromStateCode" => $fromStateCode ?? "05",
-            "toGstin" => $toGstin ?? "02EHFPS5910D2Z0",
+            "fromPincode" => auth()->user()->profile->communication_pincode ?? 605001,
+            "actFromStateCode" => $fromStateCode ?? "34",
+            "fromStateCode" => $fromStateCode ?? "34",
+            "toGstin" => $toGstin ?? "29AWGPV7107B1Z1",
             "toTrdName" => $invoice->party->name ?? "sthuthya",
             "toAddr1" => $invoice->party->shipping_address ?? "Shree Nilaya",
             "toAddr2" => "" ?? "Dasarahosahalli",
             "toPlace" => $invoice->party->shipping_city ?? "Beml Nagar",
-            "toPincode" => $invoice->party->shipping_pincode ?? 176036,
-            "actToStateCode" => $toStateCode ?? "02",
-            "toStateCode" => $toStateCode ?? "02",
+            "toPincode" => $invoice->party->shipping_pincode ?? 562160,
+            "actToStateCode" => $toStateCode ?? "29",
+            "toStateCode" => $toStateCode ?? "29",
             "transactionType" => 4,
-            "dispatchFromGSTIN" => $fromGstin ?? "29AAAAA1303P1ZV",
-            "dispatchFromTradeName" => auth()->user()->profile->name ?? "ABC Traders",
-            "shipToGSTIN" => $toGstin ?? "29ALSPR1722R1Z3",
-            "shipToTradeName" => $invoice->party->name ?? "XYZ Traders",
+            // "dispatchFromGSTIN" => $fromGstin ?? "29AAAAA1303P1ZV",
+            // "dispatchFromTradeName" => auth()->user()->profile->name ?? "ABC Traders",
+            // "shipToGSTIN" => $toGstin ?? "29ALSPR1722R1Z3",
+            // "shipToTradeName" => $invoice->party->name ?? "XYZ Traders",
             "otherValue" => 0 ?? -100 ,
             "totalValue" => $invoice->item_total_amount ?? 56099,
             "cgstValue" => $invoice->cgst ?? 0,
             "sgstValue" => $invoice->sgst ?? 0,
-            "igstValue" => $invoice->igst ?? 0,
-            "cessValue" => $invoice->cess ?? 0,
-            "cessNonAdvolValue" => 0,
-            "totInvValue" => $invoice->total_amount ?? 56099,
+            "igstValue" => $invoice->igst ?? 300.67,
+            "cessValue" => $invoice->cess ?? 400.56,
+            "cessNonAdvolValue" => 400,
+            "totInvValue" => $invoice->total_amount ?? 68358,
             "transporterId" => "",
             "transporterName" => $transporterName, 
             "transDocNo" => $transporterDocNo,
@@ -320,9 +323,11 @@ class EwaybillController extends Controller
                 }
             }
         } catch(\Exception $e) {
-            DB::rollBack();
-            $split_error = explode("{", $e->getMessage());
-            return redirect()->back()->with('failure', $split_error[2]); // ' Failed to generate ewaybill'
+            DB::rollBack(); 
+            $split_error = explode("response:", $e->getMessage());
+            $split_error1 = explode("240:", $split_error[1]);
+            $errorMsg = str_replace('\r\n"}}', '', $split_error1[1]);
+            return redirect()->back()->with('failure', $errorMsg); // ' Failed to generate ewaybill'
         }
     }
 
@@ -388,7 +393,10 @@ class EwaybillController extends Controller
         try{
             $authToken = Ewayapi::getAuthToken($accesstoken_endpoint,  $this->gstin, $this->username, $this->ewbpwd);
         } catch(\Exception $e) {
-            return redirect()->back()->with('failure', 'Failed to generate token - ' . $e->getMessage());
+            $split_error = explode("response:", $e->getMessage());
+            $split_error1 = explode("240:", $split_error[1]);
+            $errorMsg = str_replace('\r\n"}}', '', $split_error1[1]);
+            return redirect()->back()->with('failure', 'Failed to generate token - ' . $errorMsg);
         }
 
         $dataArray = [
@@ -411,7 +419,10 @@ class EwaybillController extends Controller
             $ewaybill->status = 0;
             $ewaybill->save();
         } catch(\Exception $e) {
-            return redirect()->back()->with('failure', $e->getMessage() . 'Failed to cancel ewaybill');
+            $split_error = explode("response:", $e->getMessage());
+            $split_error1 = explode("240:", $split_error[1]);
+            $errorMsg = str_replace('\r\n"}}', '', $split_error1[1]);
+           return redirect()->back()->with('failure', $errorMsg);
         }
 
         return redirect()->back()->with('success', 'Successfully cancelled ewaybill');

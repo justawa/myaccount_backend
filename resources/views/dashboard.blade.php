@@ -402,7 +402,7 @@
 
 			@php
 				$custom_message = session('failure');
-				echo "<script>show_custom_alert(`<span style=\"color: red\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i> $custom_message</span>`)</script>";
+				echo "<script>show_custom_alert(`<span style=\"color: red\"> $custom_message</span>`)</script>";
 			@endphp
 
 		@endif

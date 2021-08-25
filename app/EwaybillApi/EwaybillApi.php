@@ -9,9 +9,9 @@ class EwaybillApi
     private static $aspid = '1631791419';
     private static $password = 'kohli@12345';
     
-    private static $gstin = '05AAACG1625Q1ZK';
-    private static $username = '05AAACG1625Q1ZK';
-    private static $ewbpwd = 'abc123@@';
+    private static $gstin = '34AACCC1596Q002';
+    private static $username = 'TaxProEnvPON';
+    private static $ewbpwd = 'abc34*';
 
     public static function getAspid()
     {

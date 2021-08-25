@@ -1,0 +1,8 @@
+http://localhost:3000/api/photos/get
+
+
+git status
+git add . filename1 filename2
+git commit -m"message"
+git pull (pulls code from server)
+git push

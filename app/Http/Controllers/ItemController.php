@@ -384,15 +384,16 @@ class ItemController extends Controller
             $from_date = auth()->user()->profile->financial_year_from;
             $to_date = auth()->user()->profile->financial_year_to;
         }
-
+        
         $data = [];
-        foreach ($items as $item) {
+        foreach ($items as $item){
             $group = Group::find($item->group_id);
 
             $item->group_name = $group->name ?? '';
             $item->data = $this->calculate_stock_summary_and_return($request, $item->id, $from_date, $to_date);
+            // dd($item->data);
         }
-
+        
         foreach($items as $item) {
             $item->opening_rate = 0;
             $item->opening_qty = 0;
@@ -409,19 +410,25 @@ class ItemController extends Controller
             $item->closing_rate = 0;
             $item->closing_qty = 0;
             $item->closing_value = 0;
+
+            
             foreach($item->data as $row) {
                 if($row['transaction_type'] == 'receipt') {
                     if($row['particulars'] == 'Opening') {
                         $item->opening_rate = $row['rate'];
-                        $item->opening_qty = $row['qty'];
+                        $item->opening_qty = $row['qty']; 
+                        // $item->opening_qty = $item->qty;
                         $item->opening_value = $row['amount'];
                     } else {
+                       
                         $item->purchase_rate += $row['rate'];
                         $item->purchase_qty += $row['qty'];
                         $item->purchase_value += $row['amount'];
                     }
                 }
-
+                
+                // $item->opening_qty = $item->qty;
+                
                 if($row['transaction_type'] == 'issued'){
                     foreach($row['rate'] as $rate) {
                         $item->sale_rate += $rate;
@@ -433,9 +440,12 @@ class ItemController extends Controller
                         $item->sale_value += $amount;
                     }
                 }
-
+                
                 foreach($row['balance']['qty'] as $qty){
-                    $item->closing_qty = $item->opening_qty + $item->purchase_qty - $item->sale_qty;
+                    
+                     $item->closing_qty = $item->opening_qty + $item->purchase_qty - $item->sale_qty;
+                     
+                    // dd($item->closing_qty);
                 }
                 foreach($row['balance']['amount'] as $amount){
                    $item->closing_value = $item->opening_value + $item->purchase_value - $item->sale_value;
@@ -444,7 +454,7 @@ class ItemController extends Controller
         }
 
         // return $item;
-
+        // dd($item);
         return view('report.stock_summary', compact('items', 'from_date', 'to_date'));
     }
 
@@ -2752,10 +2762,13 @@ class ItemController extends Controller
         if ($request->has('from_date') && $request->has('to_date')) {
             $from_date = date('Y-m-d', strtotime(str_replace('/', '-', $request->from_date)));
             $to_date = date('Y-m-d', strtotime(str_replace('/', '-', $request->to_date)));
+            $previous_from_date = date("Y-m-d",strtotime ( '-1 year' , strtotime ( $from_date ) )) ;
+            $previous_to_date = date("Y-m-d", strtotime($to_date));
         } else {
             $from_date = auth()->user()->profile->financial_year_from;
             $to_date = auth()->user()->profile->financial_year_to;
         }
+        
         $item = Item::findOrFail($id);
         $data = $this->calculate_stock_summary_and_return($request, $item->id, $from_date, $to_date);
         return view('report.single_item_stock_summary', compact('data'));
@@ -2777,6 +2790,10 @@ class ItemController extends Controller
 
     private function calculate_stock_item_opening_balance($item, $from_date, $to_date)
     {
+        // dd($from_date, $to_date);
+        // $from_date = date('Y-m-d', strtotime(str_replace('/', '-', '01/04/2022')));
+        // $to_date = date('Y-m-d', strtotime(str_replace('/', '-', '31/03/2023')));
+
         $id = $item->id;
         $fifo = true;
         $purchase_items = auth()->user()->purchaseItems()->where('item_id', $id)->whereBetween('bought_on', [$from_date, $to_date])->orderBy('bought_on')->get();
@@ -2798,9 +2815,11 @@ class ItemController extends Controller
         $debitNote_array = array();
 
         foreach ($purchase_items as $item) {
+            //dd($item);
             $purchase = PurchaseRecord::findOrFail($item->purchase_id);
             $foundItem = Item::findOrFail($item->item_id);
-
+            
+            // dd($purchase);
             // default for base unit
             $rate = $item->price;
             if($item->qty_type == "alternate") {
@@ -2845,7 +2864,7 @@ class ItemController extends Controller
 
         foreach ($invoice_items as $item) {
             $sale = Invoice::findOrFail($item->invoice_id);
-            
+           //dd($item);
             if($sale->type_of_bill == "regular") {
                 $sale_array[] = [
                     'routable' => $item->invoice_id,
@@ -2912,19 +2931,22 @@ class ItemController extends Controller
         );
 
         $this->array_sort_by_column($combined_array, 'date');
-
+        // dd($combined_array);
         $data = [];
         foreach($combined_array as $row) {
-
             if($row['transaction_type'] == 'receipt') {
+                // dd($row);
                 //pushing data (bought item to stock) at the end in the array
                 array_push($balance_qty_array, $row['qty']);
+                // dd($row['qty']);
                 array_push($balance_rate_array, $row['rate']);
                 array_push($balance_amount_array, $row['amount']);
             }
+            //dd($balance_qty_array);
 
             if($row['transaction_type'] == 'issued') {
                 $qty = $row['req_qty'];
+                // dd($qty);
                 $qty_array = [];
                 $rate_array = [];
                 $amount_array = [];
@@ -2932,6 +2954,7 @@ class ItemController extends Controller
                     for($i=0; $i<count($balance_qty_array); $i++) {
                         if($qty > 0 && $qty > $balance_qty_array[$i]) {
                             $qty -= $balance_qty_array[$i];
+                            
                             // pushing data (sold item to issued) at the end in the array
                             // array_shift removes data from the front of the stock (FIFO). Item which was bought first will be sold first
                             array_push($qty_array, array_shift($balance_qty_array));
@@ -2939,12 +2962,14 @@ class ItemController extends Controller
                             array_push($amount_array, array_shift($balance_amount_array));
                         } else if ($qty > 0 && $qty < $balance_qty_array[$i]) {
                             array_push($qty_array, $qty);
+                            
                             array_push($rate_array, $balance_rate_array[$i]);
                             array_push($amount_array, $qty * $balance_rate_array[$i]);
                             $balance_qty_array[$i] -= $qty;
                             $balance_amount_array[$i] = $balance_qty_array[$i] * $balance_rate_array[$i];
                             $qty = 0;
                         } else if ($qty > 0 && $qty == $balance_qty_array[$i]) {
+                            
                             $removed_rate = array_shift($balance_rate_array);
                             array_shift($balance_amount_array);
                             array_push($qty_array, array_shift($balance_qty_array));
@@ -2956,6 +2981,7 @@ class ItemController extends Controller
                 } else {
                     for($i=count($balance_qty_array)-1; $i >= 0; $i--) {
                         if($qty > 0 && $qty > $balance_qty_array[$i]) {
+                            
                             $qty -= $balance_qty_array[$i];
                             // pushing data (sold item to issued) at the end in the array
                             // array_pop removes data from the end of the stock (LIFO). Item which was bought last will be sold first
@@ -2980,44 +3006,59 @@ class ItemController extends Controller
                     }
                 }
                 $row['qty'] = $qty_array;
+                // dd($qty_array);
                 $row['rate'] = $rate_array;
                 $row['amount'] = $amount_array;
             }
-
+           // dd($balance_qty_array);
             $row['balance'] = ['qty' => $balance_qty_array, 'rate' => $balance_rate_array, 'amount' => $balance_amount_array];
             $data[] = $row;
+        // dd($row);
         }
-
+        
         $opening_value = 0;
         $opening_qty = 0;
         $opening_rate = 0;
+
+        // foreach($data as $row){
+        //     if($row['transaction_type'] == 'receipt' || $row['transaction_type']=='issued'){
+        //         $opening_qty += ($row['qty'] + $row['req_qty']);
+        //     }
+        // }
+        
+        // dd($row['qty']);
         foreach($data as $row) {
             if($row['transaction_type'] == 'receipt') {
                 $opening_qty += $row['qty'];
-                $opening_value += $row['amount'];
+                // $opening_qty = $item->qty;
+                $opening_value += $row['amount'];  
             }
-
             if($row['transaction_type'] == 'issued'){
+                 //dd($opening_qty);
                 foreach($row['qty'] as $qty) {
-                    $opening_qty -= $qty;
+                    $opening_qty -= $qty; 
+                   // dd($qty);
                 }
                 foreach($row['amount'] as $amount){
                     $opening_value -= $amount;
+                    // dd($opening_value);
                 }
             }
         }
-
+       
         if($from_date <= $item->opening_stock_date && $item->opening_stock_date <= $to_date) {
             $opening_value = $item->opening_stock_value;
-            $opening_qty = $item->opening_stock;
-        }
-
+            $opening_qty = $item->opening_stock; 
+            
+        } 
+        
         if($opening_qty == 0) {
             $opening_rate = $opening_value;
         } else {
             $opening_rate = $opening_value / $opening_qty;
         }
 
+        // dd($opening_qty);
         return ['qty' => $opening_qty, 'rate' => $opening_rate, 'value' => $opening_value, 'date' => $to_date];
     }
 
@@ -3044,14 +3085,14 @@ class ItemController extends Controller
         $creditNote_array = array();
         $debitNote_array = array();
         // $physicalStock_array = array();
-
+        // dd($current_item);
         $closing_balance_from_date = auth()->user()->profile->book_beginning_from;
         $closing_balance_to_date = \Carbon\Carbon::parse($from_date)->format('Y-m-d');
-
+        //dd( $closing_balance_from_date, $closing_balance_to_date);
         $opening_stock = $this->calculate_stock_item_opening_balance($current_item, $closing_balance_from_date, $closing_balance_to_date);
-
-        // $opening_stock = $current_item->opening_stock == 0 ? 1 : $current_item->opening_stock;
-        // $rate = $current_item->opening_stock_value / $opening_stock;
+    //    dd($opening_stock);
+       // $opening_stock = $current_item->opening_stock == 0 ? 1 : $current_item->opening_stock;
+       // $rate = $current_item->opening_stock_value / $opening_stock;
 
         // $opening_array[] = [
         //     'routable' => '',
@@ -3078,6 +3119,7 @@ class ItemController extends Controller
             'transaction_type' => 'receipt',
             'type' => 'showable'
         ];
+        //dd($opening_stock);
 
         foreach ($purchase_items as $item) {
             $purchase = PurchaseRecord::findOrFail($item->purchase_id);
@@ -3106,7 +3148,7 @@ class ItemController extends Controller
                     'transaction_type' => 'receipt',
                     'type' => 'showable'
                 ];
-
+                
                 // add free qty
                 if($item->free_qty != 0) {
                     $purchase_array[] = [
@@ -3123,8 +3165,9 @@ class ItemController extends Controller
                     ];
                 }
             }
+            
         }
-
+        // dd($item->qty);
         foreach ($invoice_items as $item) {
             $sale = Invoice::findOrFail($item->invoice_id);
             
@@ -3134,6 +3177,7 @@ class ItemController extends Controller
                     'particulars' => 'Sale',
                     'voucher_no' => $sale->invoice_no,
                     'req_qty' => $item->item_qty,
+                    
                     'date' => Carbon::parse($sale->invoice_date)->format('Y-m-d'),
                     'transaction_type' => 'issued',
                     'type' => 'showable'
@@ -3205,7 +3249,7 @@ class ItemController extends Controller
             $creditNote_array,
             $debitNote_array
         );
-
+        
         $this->array_sort_by_column($combined_array, 'date');
 
         $data = [];
