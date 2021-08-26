@@ -652,14 +652,6 @@ Route::get('print-invoice/{invoice}', 'PdfController@print_invoice')->name('prin
 
 Route::get('print-bill/{bill}', 'PdfController@print_bill')->name('print.bill');
 
-Route::get('print-sale-credit-note/{note_no}', 'PdfController@print_sale_credit_note')->name('print.sale.credit.note');
-
-Route::get('print-sale-debit-note/{note_no}', 'PdfController@print_sale_debit_note')->name('print.sale.debit.note');
-
-Route::get('print-purchase-credit-note/{note_no}', 'PdfController@print_purchase_credit_note')->name('print.purchase.credit.note');
-
-Route::get('print-purchase-debit-note/{note_no}', 'PdfController@print_purchase_debit_note')->name('print.purchase.debit.note');
-
 Route::get('export-all-in-on-excel', 'SingleExcelExportController@index')->name('excel.export.index');
 
 Route::get('export-single-excel', 'SingleExcelExportController@export_all_excel')->name('export.excel');
